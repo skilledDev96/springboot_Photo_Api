@@ -1,35 +1,35 @@
-package com.springtest.photoz.clone;
+package com.springtest.photoz.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.validation.constraints.NotEmpty;
 
+@Table("PHOTOZ")
 public class Photo {
-    private String id;
+
+    @Id
+    private Integer id;
     
     @NotEmpty
     private String fileName;
 
+    private String contentType;
+
     @JsonIgnore
     private byte[] data;
 
-    private String contentType;
-
     public Photo(){
     } 
-
-    public Photo(String id, String fileName,String contentType){
-        this.id = id;
-        this.fileName = fileName;
-        this.contentType = contentType;
-    }
     
     //raw Data
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     
@@ -41,14 +41,6 @@ public class Photo {
         this.fileName = fileName;
     }
 
-    public void setData(byte[] data) {
-        this.data = data;
-    }
-
-    public byte[] getData() {
-        return data;
-    }
-
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }
@@ -57,4 +49,11 @@ public class Photo {
         return contentType;
     }
 
+    public void setData(byte[] data) {
+        this.data = data;
+    }
+
+    public byte[] getData() {
+        return data;
+    }
 }

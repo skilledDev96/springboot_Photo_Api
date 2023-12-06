@@ -1,4 +1,4 @@
-package com.springtest.photoz.clone;
+package com.springtest.photoz.controllers;
 
 import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpHeaders;
@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+
+import com.springtest.photoz.model.Photo;
+import com.springtest.photoz.service.PhotoService;
 
 @RestController
 public class DownloadController {
@@ -21,7 +24,7 @@ public class DownloadController {
 
 
     @GetMapping("/download/{id}")
-    public ResponseEntity<byte[]> download(@PathVariable String id){
+    public ResponseEntity<byte[]> download(@PathVariable Integer id){
         Photo photo = photoService.get(id);
         if(photo == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 

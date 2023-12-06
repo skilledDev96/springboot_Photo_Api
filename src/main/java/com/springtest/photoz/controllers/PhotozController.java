@@ -1,7 +1,6 @@
-package com.springtest.photoz.clone;
+package com.springtest.photoz.controllers;
 
 import java.io.IOException;
-import java.util.Collection;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
+
+import com.springtest.photoz.model.Photo;
+import com.springtest.photoz.service.PhotoService;
 
 @RestController
 public class PhotozController {
@@ -28,21 +30,20 @@ public class PhotozController {
     }
 
     @GetMapping("/photoz")
-    public Collection<Photo> get(){
+    public Iterable<Photo> get(){
         return photoService.getAll();
     }
     
     @GetMapping("/photoz/{id}")
-    public Photo get(@PathVariable String id){
+    public Photo get(@PathVariable Integer id){
         Photo photo = photoService.get(id);
         if(photo == null) throw new ResponseStatusException((HttpStatus.NOT_FOUND));
         return photo;
     }
 
      @DeleteMapping("/photoz/{id}")
-    public void delete(@PathVariable String id){
-        Photo photo = photoService.remove(id);
-        if(photo == null) throw new ResponseStatusException((HttpStatus.NOT_FOUND));
+    public void delete(@PathVariable Integer id){
+        photoService.remove(id);
     }
 
      @PostMapping("/photoz")
