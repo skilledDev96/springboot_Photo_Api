@@ -1,5 +1,7 @@
 <h1> Springboot Photo Api </h1>
-Credit to: Crash Course on springboot -> https://www.youtube.com/watch?v=QuvS_VLbGko 
+
+- Credit to: Crash Course on springboot -> https://www.youtube.com/watch?v=QuvS_VLbGko 
+- Extra Resources available if wanted: ->  https://docs.google.com/document/d/14i1qoMYjnsc7LiehVlNLRF6KfrE1yRb3CfPuD9SDSGQ/edit
 
 <h3> Steps to Follow to Test API: </h3>
 
