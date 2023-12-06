@@ -1,5 +1,7 @@
 <h1> Springboot Photo Api </h1>
-Crash Course on springboot -> https://www.youtube.com/watch?v=QuvS_VLbGko
+Credit to: Crash Course on springboot -> https://www.youtube.com/watch?v=QuvS_VLbGko 
+
+<h3> Steps to Follow to Test API: </h3>
 
 - Download file in target folder
 - Place in folder somewhere on system
