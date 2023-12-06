@@ -1,7 +1,7 @@
 # springboot_Photo_Api
 Crash Course on springboot
 
-/n Download file in target folder
+Download file in target folder
 Place in folder somewhere on system
 run cdm with admin rights
 Enter following command:
